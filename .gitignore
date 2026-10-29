@@ -30,3 +30,6 @@ backups/
 # OS
 .DS_Store
 Thumbs.db
+
+# Documentation previews
+docs/preview/

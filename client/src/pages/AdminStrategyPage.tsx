@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Shield,
   RefreshCw,
+  Download,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { useDemoMode } from '../context/DemoModeContext';
@@ -64,30 +65,42 @@ export const AdminStrategyPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Tab Pills */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-950 border border-slate-800">
-          <button
-            onClick={() => setActiveTab('planner')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              activeTab === 'planner'
-                ? 'bg-brand-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
+        {/* Tab Pills & Download PDF */}
+        <div className="flex flex-wrap items-center gap-2">
+          <a
+            href="/NxtWave_LaunchLoop_Growth_Plan_5_Slides.pdf"
+            download="NxtWave_LaunchLoop_Growth_Plan_5_Slides.pdf"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all shadow-md active:scale-95"
+            title="Download executive 5-slide PDF presentation"
           >
-            <Calendar className="w-3.5 h-3.5" />
-            <span>7-Day Pacing Planner</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('slides')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-              activeTab === 'slides'
-                ? 'bg-brand-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            <Presentation className="w-3.5 h-3.5" />
-            <span>5-Slide Challenge Deck</span>
-          </button>
+            <Download className="w-3.5 h-3.5" />
+            <span>Download PDF (5 Slides)</span>
+          </a>
+
+          <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-950 border border-slate-800">
+            <button
+              onClick={() => setActiveTab('planner')}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === 'planner'
+                  ? 'bg-brand-600 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <Calendar className="w-3.5 h-3.5" />
+              <span>7-Day Pacing Planner</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('slides')}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                activeTab === 'slides'
+                  ? 'bg-brand-600 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <Presentation className="w-3.5 h-3.5" />
+              <span>5-Slide Challenge Deck</span>
+            </button>
+          </div>
         </div>
       </div>
 

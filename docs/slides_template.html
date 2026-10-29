@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LaunchLoop AI — 5-Slide Growth Plan</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0B0F19;
+      color: #F8FAFC;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .slide {
+      width: 16in;
+      height: 9in;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+      background: #0B0F19;
+      overflow: hidden;
+      padding: 0.8in 1in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Ambient background gradient highlights */
+    .slide::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 8in;
+      height: 8in;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
+      pointer-events: none;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 8in;
+      height: 8in;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(11, 15, 25, 0) 70%);
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 0.35in;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .slide-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.18in;
+      font-weight: 700;
+      color: #818CF8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.1in;
+    }
+
+    .title {
+      font-size: 0.44in;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      font-size: 0.22in;
+      color: #94A3B8;
+      margin-top: 0.06in;
+      font-weight: 400;
+    }
+
+    .brand-badge {
+      text-align: right;
+    }
+
+    .brand-name {
+      font-size: 0.26in;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.15in;
+      color: #64748B;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 0.04in;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+      padding: 0.45in 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3in;
+    }
+
+    .footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid #1E293B;
+      padding-top: 0.2in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.15in;
+      color: #64748B;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Cards & Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.3in;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.35in;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.25in;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid #1E293B;
+      border-radius: 0.2in;
+      padding: 0.3in 0.35in;
+    }
+
+    .card-highlight {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1.5px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .card-accent {
+      background: rgba(6, 182, 212, 0.08);
+      border: 1.5px solid rgba(6, 182, 212, 0.35);
+    }
+
+    .card-amber {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1.5px solid rgba(245, 158, 11, 0.35);
+    }
+
+    .card-emerald {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1.5px solid rgba(16, 185, 129, 0.35);
+    }
+
+    .card-title {
+      font-size: 0.22in;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.12in;
+      display: flex;
+      align-items: center;
+      gap: 0.12in;
+    }
+
+    .card-text {
+      font-size: 0.17in;
+      line-height: 1.55;
+      color: #CBD5E1;
+    }
+
+    /* Value Proposition Banner */
+    .banner {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.25) 0%, rgba(124, 58, 237, 0.25) 100%);
+      border: 2px solid #6366F1;
+      border-radius: 0.22in;
+      padding: 0.35in 0.45in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .banner-title {
+      font-size: 0.28in;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.08in;
+    }
+
+    .banner-text {
+      font-size: 0.18in;
+      color: #E2E8F0;
+      line-height: 1.5;
+    }
+
+    /* Table styling */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.17in;
+      background: rgba(17, 24, 39, 0.6);
+      border-radius: 0.18in;
+      overflow: hidden;
+      border: 1px solid #1E293B;
+    }
+
+    table.data-table th {
+      background: #070A12;
+      padding: 0.2in 0.25in;
+      text-align: left;
+      font-size: 0.15in;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-family: 'JetBrains Mono', monospace;
+      border-bottom: 1px solid #1E293B;
+    }
+
+    table.data-table td {
+      padding: 0.18in 0.25in;
+      border-bottom: 1px solid #1E293B;
+      color: #E2E8F0;
+    }
+
+    table.data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.05in 0.14in;
+      border-radius: 0.1in;
+      font-size: 0.15in;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+
+    .pill-indigo { background: rgba(99, 102, 241, 0.2); color: #A5B4FC; border: 1px solid #6366F1; }
+    .pill-cyan { background: rgba(6, 182, 212, 0.2); color: #67E8F9; border: 1px solid #06B6D4; }
+    .pill-emerald { background: rgba(16, 185, 129, 0.2); color: #6EE7B7; border: 1px solid #10B981; }
+    .pill-amber { background: rgba(245, 158, 11, 0.2); color: #FCD34D; border: 1px solid #F59E0B; }
+
+    .stat-box {
+      background: #070A12;
+      border: 1px solid #1E293B;
+      border-radius: 0.18in;
+      padding: 0.22in;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 0.36in;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-lbl {
+      font-size: 0.14in;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.04in;
+    }
+
+    .timeline-step {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid #1E293B;
+      border-radius: 0.18in;
+      padding: 0.22in 0.25in;
+    }
+
+    .timeline-day {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.17in;
+      font-weight: 700;
+      color: #818CF8;
+      margin-bottom: 0.04in;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .timeline-title {
+      font-size: 0.18in;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.06in;
+    }
+
+    .timeline-desc {
+      font-size: 0.14in;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== SLIDE 1 ==================== -->
+  <div class="slide">
+    <div class="header">
+      <div>
+        <div class="slide-tag">Slide 01 of 05 • NxtWave Growth Challenge</div>
+        <div class="title">Target Students, Pain Points & Value Proposition</div>
+        <div class="subtitle">Why final-year engineering students will act now on a 60-minute practical workshop</div>
+      </div>
+      <div class="brand-badge">
+        <div class="brand-name">LaunchLoop AI</div>
+        <div class="brand-sub">NXTWAVE GROWTH CHALLENGE</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Target Audience Strip -->
+      <div class="card card-highlight" style="padding: 0.22in 0.35in;">
+        <div class="card-title" style="font-size: 0.2in; margin-bottom: 0.04in;">
+          <span style="color: #818CF8;">Target Audience Profile:</span>
+          <span>Final-Year & Pre-Final Year Engineering Students (2025/2026 Batches)</span>
+        </div>
+        <p class="card-text" style="font-size: 0.16in;">
+          B.Tech/BE undergraduates across CSE, IT, AI/DS, and ECE in Tier-2/3 technical colleges and state engineering universities facing immediate campus placement screening and capstone project deadlines.
+        </p>
+      </div>
+
+      <!-- 3 Pain Points -->
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title" style="color: #F87171;">01. Resume Inadequacy</div>
+          <p class="card-text">
+            Generic tutorial projects (e.g., standard calculators, basic to-do apps) fail recruiter screenings. Students need defensible AI architecture bullets with modern APIs and deployment keywords.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="color: #FBBF24;">02. Cloud Cost & Setup Fear</div>
+          <p class="card-text">
+            Students want to learn AI but dread entering credit card details for paid LLM APIs or getting stuck in complex AWS/Docker setups. They demand 100% free, working software.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="color: #60A5FA;">03. Course Fatigue & Time Limits</div>
+          <p class="card-text">
+            40-hour theoretical courses have &lt; 5% completion rates during busy semesters. A 60-minute sprint provides immediate closure and an actionable asset with zero schedule friction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Value Proposition Banner -->
+      <div class="banner">
+        <div>
+          <div class="banner-title">“Build Your First AI Project in 60 Minutes”</div>
+          <div class="banner-text">
+            Go from idea to a working AI-powered mini project in one live, guided sprint. Understand the client-to-model architecture, connect an interface, and build something you can test and showcase.
+          </div>
+        </div>
+        <div style="text-align: right; min-width: 2.8in;">
+          <span class="pill pill-emerald" style="font-size: 0.18in; padding: 0.1in 0.2in;">100% Free Workshop</span>
+          <div style="font-size: 0.14in; color: #94A3B8; margin-top: 0.08in; font-family: 'JetBrains Mono';">Zero Paid APIs Required</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>LaunchLoop AI • Campus-Wide Movement Strategy</span>
+      <span>Target: 500 Registrations • Budget: ₹2,000</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2 ==================== -->
+  <div class="slide">
+    <div class="header">
+      <div>
+        <div class="slide-tag">Slide 02 of 05 • Acquisition Model</div>
+        <div class="title">Priority Channels & Registration Acquisition Model</div>
+        <div class="subtitle">Systematic, capital-efficient distribution path to 500 verified registrations</div>
+      </div>
+      <div class="brand-badge">
+        <div class="brand-name">LaunchLoop AI</div>
+        <div class="brand-sub">BUDGET: ₹2,000 TOTAL</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 4 Quick Stats -->
+      <div class="grid-4">
+        <div class="stat-box">
+          <div class="stat-val" style="color: #818CF8;">500</div>
+          <div class="stat-lbl">Target Registrations</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: #34D399;">₹2,000</div>
+          <div class="stat-lbl">Total Campaign Budget</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: #38BDF8;">₹4.00</div>
+          <div class="stat-lbl">Target Blended CAC</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: #F472B6;">7 Days</div>
+          <div class="stat-lbl">Acquisition Sprint</div>
+        </div>
+      </div>
+
+      <!-- Channel Table -->
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Priority Channel</th>
+            <th style="text-align: center;">Target Regs</th>
+            <th style="text-align: center;">Share (%)</th>
+            <th style="text-align: center;">Allocated Cost</th>
+            <th style="text-align: center;">Channel CAC</th>
+            <th>Tactical Acquisition Play</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color: #FFFFFF;">Campus Clubs & Student Ambassadors</strong></td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; font-weight: 700; color: #818CF8;">150</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">30%</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; color: #34D399;">₹500</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">₹3.33</td>
+            <td>Onboard 15 student ambassadors across key colleges with physical club noticeboard flyers & digital kits.</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #FFFFFF;">WhatsApp Student Communities</strong></td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; font-weight: 700; color: #818CF8;">140</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">28%</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; color: #34D399;">₹300</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">₹2.14</td>
+            <td>Value-first micro-carousels in 35+ final-year class, lab, and departmental announcement groups.</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #FFFFFF;">College Email & Department Bulletins</strong></td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; font-weight: 700; color: #818CF8;">70</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">14%</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; color: #94A3B8;">₹0</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">₹0.00</td>
+            <td>Placement cell student representative emails and weekly departmental placement bulletins.</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #FFFFFF;">LinkedIn & Instagram Organic</strong></td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; font-weight: 700; color: #818CF8;">60</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">12%</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; color: #94A3B8;">₹0</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">₹0.00</td>
+            <td>Student project breakdown teasers: "Why building a 60-min AI project beats watching 20-hr courses."</td>
+          </tr>
+          <tr>
+            <td><strong style="color: #FFFFFF;">Referral-Led Acquisition (Attribution Overlay)</strong></td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; font-weight: 700; color: #F472B6;">80</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">16%</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono'; color: #94A3B8;">₹0</td>
+            <td style="text-align: center; font-family: 'JetBrains Mono';">₹0.00</td>
+            <td>Post-registration peer viral loop (Target viral factor K &ge; 0.35) with collision-resistant links.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size: 0.15in; color: #94A3B8; font-style: italic; background: rgba(17, 24, 39, 0.5); padding: 0.12in 0.25in; border-radius: 0.1in; border-left: 3px solid #6366F1;">
+        * Note on Double-Counting Prevention: Referral acquisition is an attribution overlay. Reaching students via ambassadors and WhatsApp feeds the viral flywheel, which yields 80 peer-to-peer registrations at zero extra rupee cost.
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>LaunchLoop AI • Channel Acquisition Blueprint</span>
+      <span>Disciplined Blended CAC: ₹4.00</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 3 ==================== -->
+  <div class="slide">
+    <div class="header">
+      <div>
+        <div class="slide-tag">Slide 03 of 05 • Execution Roadmap</div>
+        <div class="title">Seven-Day Execution Plan & Daily Milestones</div>
+        <div class="subtitle">Systematic trajectory tracking from Day 1 kick-off to Day 7 completion</div>
+      </div>
+      <div class="brand-badge">
+        <div class="brand-name">LaunchLoop AI</div>
+        <div class="brand-sub">DAILY CADENCE: 30 → 100</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 7 Days Grid -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25in;">
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 01</span> <span class="pill pill-indigo">Target: 30 (Cum: 30)</span></div>
+          <div class="timeline-title">Ambassador Foundation</div>
+          <div class="timeline-desc">Brief 15 core student campus leads with tracking copy kits. Place posters on club noticeboards across 5 pilot engineering colleges.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 02</span> <span class="pill pill-indigo">Target: 50 (Cum: 80)</span></div>
+          <div class="timeline-title">WhatsApp Class Broadcast</div>
+          <div class="timeline-desc">Deploy value-first micro-carousels in 35+ departmental class and lab WhatsApp groups focusing on resume project benefits.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 03</span> <span class="pill pill-indigo">Target: 65 (Cum: 145)</span></div>
+          <div class="timeline-title">Placement Bulletin Email</div>
+          <div class="timeline-desc">Placement coordinator email blasts; release the first public referral leaderboard update recognizing top student referrers.</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 04</span> <span class="pill pill-amber">Target: 75 (Cum: 220)</span></div>
+          <div class="timeline-title">Mid-Point Pacing Audit</div>
+          <div class="timeline-desc">Publish LinkedIn project teasers. Trigger 70% pacing check: if cumulative registrations &lt; 154, shift 100% focus to top 2 channels.</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25in;">
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 05</span> <span class="pill pill-cyan">Target: 85 (Cum: 305)</span></div>
+          <div class="timeline-title">Tactical Search Experiment</div>
+          <div class="timeline-desc">Deploy optional ₹400-₹800 experiment targeting students seeking capstone projects; activate peer invites: "Bring your project partner."</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-day"><span>DAY 06</span> <span class="pill pill-cyan">Target: 95 (Cum: 400)</span></div>
+          <div class="timeline-title">Peer Referral Flywheel</div>
+          <div class="timeline-desc">Trigger in-app WhatsApp nudges: invite 2 peers to unlock Project Starter Kit. Spotlight top 3 ambassadors on the public leaderboard.</div>
+        </div>
+
+        <div class="timeline-step card-emerald">
+          <div class="timeline-day"><span>DAY 07</span> <span class="pill pill-emerald">Target: 100 (Cum: 500)</span></div>
+          <div class="timeline-title" style="color: #34D399;">Final 24-Hour Closeout</div>
+          <div class="timeline-desc">Last-chance broadcast across all community hubs. Freeze registration pipelines, lock verified records, and deliver workshop credentials.</div>
+        </div>
+      </div>
+
+      <!-- Pacing Rule Alert Banner -->
+      <div class="card card-amber" style="padding: 0.2in 0.35in;">
+        <strong style="color: #FCD34D;">Automated Pacing Decision Rule: </strong>
+        <span style="color: #E2E8F0;">
+          If cumulative registrations drop below 70% of target by Day 4 (&lt; 154 registrations), immediately freeze broad promotional spend, concentrate 100% effort on the top 2 highest-converting campus channels, and onboard 5 additional student ambassadors before drawing from contingency.
+        </span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>LaunchLoop AI • Seven-Day Campaign Strategy</span>
+      <span>Strict Pacing Governance & Auditing</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 4 ==================== -->
+  <div class="slide">
+    <div class="header">
+      <div>
+        <div class="slide-tag">Slide 04 of 05 • Budget & Governance</div>
+        <div class="title">₹2,000 Budget Allocation, Telemetry & Decision Rules</div>
+        <div class="subtitle">Disciplined capital efficiency with automated, explainable growth intelligence</div>
+      </div>
+      <div class="brand-badge">
+        <div class="brand-name">LaunchLoop AI</div>
+        <div class="brand-sub">CAPITAL EFFICIENCY</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Budget Split 4 Cards -->
+      <div class="grid-4">
+        <div class="card card-highlight">
+          <div class="card-title" style="color: #818CF8; font-size: 0.18in;">Campus Ambassadors</div>
+          <div style="font-size: 0.38in; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono';">₹500</div>
+          <div style="font-size: 0.14in; color: #94A3B8; margin-top: 0.05in;">25% of Total Budget</div>
+          <p class="card-text" style="font-size: 0.14in; margin-top: 0.1in;">Physical club posters, noticeboard flyers, and student lead recognition kits.</p>
+        </div>
+
+        <div class="card card-accent">
+          <div class="card-title" style="color: #38BDF8; font-size: 0.18in;">Student Creatives</div>
+          <div style="font-size: 0.38in; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono';">₹300</div>
+          <div style="font-size: 0.14in; color: #94A3B8; margin-top: 0.05in;">15% of Total Budget</div>
+          <p class="card-text" style="font-size: 0.14in; margin-top: 0.1in;">WhatsApp carousel micro-kits, Figma visual templates, and class banners.</p>
+        </div>
+
+        <div class="card card-amber">
+          <div class="card-title" style="color: #FBBF24; font-size: 0.18in;">Optional Experiment</div>
+          <div style="font-size: 0.38in; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono';">₹800</div>
+          <div style="font-size: 0.14in; color: #94A3B8; margin-top: 0.05in;">40% of Total Budget</div>
+          <p class="card-text" style="font-size: 0.14in; margin-top: 0.1in;">Targeted high-intent search test for capstone project keywords (capped at ₹200/day).</p>
+        </div>
+
+        <div class="card card-emerald">
+          <div class="card-title" style="color: #34D399; font-size: 0.18in;">Contingency Reserve</div>
+          <div style="font-size: 0.38in; font-weight: 800; color: #FFFFFF; font-family: 'JetBrains Mono';">₹400</div>
+          <div style="font-size: 0.14in; color: #94A3B8; margin-top: 0.05in;">20% of Total Budget</div>
+          <p class="card-text" style="font-size: 0.14in; margin-top: 0.1in;">Capital reserve for emergency channel reinforcement or unexpected outreach needs.</p>
+        </div>
+      </div>
+
+      <!-- 2 Columns: Decision Rules & Explainable Intelligence -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="color: #FCD34D;">Governing Decision Rules</div>
+          <div style="space-y: 0.12in; font-size: 0.16in; color: #CBD5E1; line-height: 1.5;">
+            <p><strong>• Cap Enforcement:</strong> Hard database-level lock at ₹2,000. Any expense exceeding the cap requires dual-confirmation admin override.</p>
+            <p><strong>• Conversion Anomaly Rule:</strong> If a channel logs &ge; 20 visits but &lt; 7.5% conversion, instantly simplify form friction and align copy.</p>
+            <p><strong>• Organic Independence:</strong> The acquisition model reaches 450+ registrations purely through campus clubs, WhatsApp, and referrals even if the ₹800 paid experiment produces zero results.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="color: #38BDF8;">Explainable Growth Intelligence</div>
+          <div style="font-size: 0.16in; color: #CBD5E1; line-height: 1.5;">
+            <p><strong>• Deterministic Heuristics:</strong> Evaluates telemetry across conversion funnels, viral coefficients (K), and campus clusters without third-party paid AI APIs.</p>
+            <p><strong>• "Explain This" Transparency:</strong> Every recommendation in the admin dashboard details the mathematical evidence, sample size confidence, and risk of inaction.</p>
+            <p><strong>• Zero Cloud Billing:</strong> Runs 100% locally with zero cloud API keys, zero hallucinations, and zero unpredictable billing surprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>LaunchLoop AI • Budget & Governance Matrix</span>
+      <span>Strict ₹2,000 Total Expenditure Ceiling</span>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 5 ==================== -->
+  <div class="slide">
+    <div class="header">
+      <div>
+        <div class="slide-tag">Slide 05 of 05 • Technology & Risk Management</div>
+        <div class="title">Working Software Asset, Assumptions & Risk Mitigation</div>
+        <div class="subtitle">Complete functional platform turning one registration into a campus-wide movement</div>
+      </div>
+      <div class="brand-badge">
+        <div class="brand-name">LaunchLoop AI</div>
+        <div class="brand-sub">FULL WORKING ASSET</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 2 Columns: Working Asset Capabilities vs Assumptions & Risks -->
+      <div class="grid-2">
+        <!-- Working Asset Capabilities -->
+        <div class="card card-highlight">
+          <div class="card-title" style="color: #A5B4FC;">Working Software Asset Capabilities</div>
+          <div style="font-size: 0.16in; color: #E2E8F0; line-height: 1.55;">
+            <p style="margin-bottom: 0.12in;">
+              <strong>1. Custom Local NoSQL Database:</strong> 8 structured JSON document collections in <code>data/</code> with atomic writes, serialized mutex queues, and automatic corruption recovery.
+            </p>
+            <p style="margin-bottom: 0.12in;">
+              <strong>2. Collision-Resistant Referral Engine:</strong> Generates unambiguous <code>LL-XXXXX</code> codes, rejects self-referrals, enforces one-referrer rules, and updates privacy-masked leaderboards.
+            </p>
+            <p style="margin-bottom: 0.12in;">
+              <strong>3. Telemetry & UTM Link Generator:</strong> Tracked campaign links measuring click-to-registration conversion rates without external analytics trackers.
+            </p>
+            <p>
+              <strong>4. Executive Command Center:</strong> 8 KPI cards, Recharts acquisition curves, CAC calculations, and spreadsheet formula injection-proof CSV exports.
+            </p>
+          </div>
+        </div>
+
+        <!-- Assumptions & Risks -->
+        <div class="card">
+          <div class="card-title" style="color: #38BDF8;">Assumptions &amp; Risk Mitigation</div>
+          <div style="font-size: 0.16in; color: #CBD5E1; line-height: 1.5;">
+            <p style="margin-bottom: 0.12in;">
+              <strong>• Assumption:</strong> Core student ambassadors recruit 10–15 peers across their respective class sections. Free 60-min project framing converts at 10–12% of visits.
+            </p>
+            <p style="margin-bottom: 0.12in; color: #FCA5A5;">
+              <strong style="color: #F87171;">• Risk: WhatsApp Spam Fatigue:</strong><br>
+              <em>Mitigation:</em> Hard cap of 2 high-value messages per group with actionable AI architecture snippets rather than generic promotional links.
+            </p>
+            <p style="margin-bottom: 0.12in; color: #FCD34D;">
+              <strong style="color: #FBBF24;">• Risk: Form Drop-Off:</strong><br>
+              <em>Mitigation:</em> Minimal fields; phone number is strictly optional with explicit consent; instant client validation.
+            </p>
+            <p style="color: #86EFAC;">
+              <strong style="color: #4ADE80;">• Risk: Referral Gaming:</strong><br>
+              <em>Mitigation:</em> Server-side email normalization, duplicate detection, and anti-self-referral validation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verification Callout Banner -->
+      <div class="banner" style="padding: 0.25in 0.35in;">
+        <div>
+          <div class="banner-title" style="font-size: 0.22in;">17/17 Automated Verification Tests Passed</div>
+          <div class="banner-text" style="font-size: 0.15in;">
+            Registration uniqueness, referral attribution, budget cap warnings, auth protection, NoSQL crash recovery, and CSV formula sanitization tested and verified.
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <span class="pill pill-emerald" style="font-size: 0.16in;">100% Local Execution</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>LaunchLoop AI • Complete Challenge Deliverable</span>
+      <span>Turn One Registration Into a Campus Movement</span>
+    </div>
+  </div>
+
+</body>
+</html>

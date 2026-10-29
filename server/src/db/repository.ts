@@ -37,6 +37,8 @@ export interface AppDatabase {
 // Single instance of DocumentStore managing all collections
 const dataDirectory = process.env.DATA_DIR
   ? path.resolve(process.env.DATA_DIR)
+  : process.env.VERCEL
+  ? '/tmp/data'
   : path.resolve(process.cwd(), '../data');
 
 export const store = new DocumentStore({

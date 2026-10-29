@@ -625,5 +625,27 @@
     "id": "ref_mvt5htbdd2310ecf10a3",
     "createdAt": "2026-10-29T06:16:50.857Z",
     "updatedAt": "2026-10-29T06:16:50.857Z"
+  },
+  {
+    "referrerRegistrationId": "reg_mvt9imlbc0c6a00eed17",
+    "referrerCode": "LL-MBGS5",
+    "referredRegistrationId": "reg_mvt9imme67763288399d",
+    "referredEmailMasked": "r********************3@example.com",
+    "status": "verified",
+    "isDemo": false,
+    "id": "ref_mvt9immkfc7974d698d9",
+    "createdAt": "2026-10-29T08:09:27.308Z",
+    "updatedAt": "2026-10-29T08:09:27.308Z"
+  },
+  {
+    "referrerRegistrationId": "reg_mvt9imlbc0c6a00eed17",
+    "referrerCode": "LL-MBGS5",
+    "referredRegistrationId": "mock_reg_unique_1793261367327",
+    "referredEmailMasked": "p****************7@test.in",
+    "status": "verified",
+    "isDemo": false,
+    "id": "ref_mvt9imn524650a9f6fab",
+    "createdAt": "2026-10-29T08:09:27.329Z",
+    "updatedAt": "2026-10-29T08:09:27.329Z"
   }
 ]

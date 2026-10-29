@@ -59,6 +59,32 @@ export class DocumentStore {
       await fs.promises.mkdir(this.dataDir, { recursive: true });
     }
 
+    // In Vercel serverless environment, copy bundled initial JSON files to writable /tmp/data
+    if (process.env.VERCEL) {
+      const candidates = [
+        path.resolve(process.cwd(), 'data'),
+        path.resolve(process.cwd(), '../data'),
+      ];
+      for (const candidate of candidates) {
+        if (fs.existsSync(candidate) && candidate !== this.dataDir) {
+          try {
+            const files = await fs.promises.readdir(candidate);
+            for (const f of files) {
+              if (f.endsWith('.json')) {
+                const dest = path.join(this.dataDir, f);
+                if (!fs.existsSync(dest)) {
+                  await fs.promises.copyFile(path.join(candidate, f), dest);
+                }
+              }
+            }
+          } catch (e) {
+            // ignore if read error
+          }
+          break;
+        }
+      }
+    }
+
     for (const coll of knownCollections) {
       const filePath = this.getFilePath(coll);
       if (!fs.existsSync(filePath)) {

@@ -1,0 +1,101 @@
+[
+  {
+    "campaignTitle": "Build Your First AI Project in 60 Minutes",
+    "organizer": "NxtWave",
+    "workshopDuration": "60 Minutes",
+    "price": "Free",
+    "totalBudgetLimit": 2000,
+    "targetRegistrations": 500,
+    "publicBaseUrl": "http://localhost:5173",
+    "dailyPlans": [
+      {
+        "day": 1,
+        "target": 30,
+        "cumulativeTarget": 30,
+        "objective": "Launch Ambassador program & early WhatsApp outreach",
+        "primaryChannel": "Campus Clubs & Ambassadors",
+        "activities": [
+          "Brief 10 core student campus ambassadors with copy kit",
+          "Post in 15 targeted final-year WhatsApp class groups",
+          "Deploy verified referral link contest announcement"
+        ]
+      },
+      {
+        "day": 2,
+        "target": 50,
+        "cumulativeTarget": 80,
+        "objective": "Scale WhatsApp student communities & engineering clubs",
+        "primaryChannel": "WhatsApp Student Communities",
+        "activities": [
+          "Distribute \"Build in 60 Mins\" workshop carousel in departmental groups",
+          "Follow up with ACM/IEEE campus chapter student leads",
+          "First referral milestone leaderboard update"
+        ]
+      },
+      {
+        "day": 3,
+        "target": 65,
+        "cumulativeTarget": 145,
+        "objective": "College email & department newsletter outreach",
+        "primaryChannel": "College Email & Newsletters",
+        "activities": [
+          "Coordinate with college placement cell student reps for email blast",
+          "Publish student project showcase teaser on LinkedIn",
+          "Recognize top 5 referrers on public leaderboard"
+        ]
+      },
+      {
+        "day": 4,
+        "target": 75,
+        "cumulativeTarget": 220,
+        "objective": "Mid-campaign momentum & organic social blitz",
+        "primaryChannel": "Instagram & LinkedIn Organic",
+        "activities": [
+          "Post student breakdown: \"Why 60 mins beats 10-hour tutorials\"",
+          "Launch mini live AMA on workshop prerequisites (beginner friendly)",
+          "Assess pacing: apply growth rule if registrations < 70% of target"
+        ]
+      },
+      {
+        "day": 5,
+        "target": 85,
+        "cumulativeTarget": 305,
+        "objective": "High-intent experimentation & secondary college outreach",
+        "primaryChannel": "High-Intent Promotional Experiment",
+        "activities": [
+          "Deploy ₹800 high-intent experiment to engineering colleges in Telangana/AP",
+          "Target students actively searching for AI capstone project guidance",
+          "Activate peer-to-peer referral surge with priority resource incentive"
+        ]
+      },
+      {
+        "day": 6,
+        "target": 95,
+        "cumulativeTarget": 400,
+        "objective": "Referral cascade & registration countdown",
+        "primaryChannel": "Referral-led Acquisition",
+        "activities": [
+          "Direct nudge to existing registrants: \"Invite 2 peers to unlock AI Project starter pack\"",
+          "Final call on major campus Discord and Telegram hubs",
+          "Review channel conversion rates and redistribute outreach"
+        ]
+      },
+      {
+        "day": 7,
+        "target": 100,
+        "cumulativeTarget": 500,
+        "objective": "Final 24-hour sprint to hit 500 registrations",
+        "primaryChannel": "Omnichannel Final Push",
+        "activities": [
+          "Last-chance reminder across all WhatsApp community channels",
+          "Ambassador final push leaderboard sprint with top student badge",
+          "Registration closeout and preparation for workshop delivery"
+        ]
+      }
+    ],
+    "isDemoModeActive": true,
+    "id": "settings_mvt5ciq0b24c8ba575bd",
+    "createdAt": "2026-10-29T06:12:43.847Z",
+    "updatedAt": "2026-10-29T06:13:40.095Z"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "launchloop-ai",
+  "version": "1.0.0",
+  "description": "LaunchLoop AI — Growth & Acquisition Platform for NxtWave AI Workshop Challenge",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "test": "npm run test --workspace=server",
+    "db:init": "npm run db:init --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
+    "db:reset": "npm run db:reset --workspace=server",
+    "db:backup": "npm run db:backup --workspace=server",
+    "db:restore": "npm run db:restore --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

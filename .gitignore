@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production builds
+dist/
+client/dist/
+server/dist/
+
+# Temporary and corrupt files
+data/*.tmp.*
+data/*.corrupt.*
+*.tmp.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Backups
+backups/
+
+# OS
+.DS_Store
+Thumbs.db

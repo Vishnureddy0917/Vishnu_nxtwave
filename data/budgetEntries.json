@@ -1,0 +1,74 @@
+[
+  {
+    "category": "campus_ambassador",
+    "categoryLabel": "Campus Ambassador & Club Outreach Materials",
+    "plannedAmount": 500,
+    "actualSpend": 350,
+    "expenseLogs": [
+      {
+        "id": "exp_amb_01",
+        "date": "2026-10-24",
+        "amount": 350,
+        "description": "Physical workshop flyers & college club notice board prints for 5 campuses",
+        "loggedBy": "admin"
+      }
+    ],
+    "notes": "Printable club notice posters, digital asset kits, campus lead rewards",
+    "isDemo": true,
+    "id": "bgt_mvt5ciq2619a0b8c4684",
+    "createdAt": "2026-10-29T06:12:43.850Z",
+    "updatedAt": "2026-10-29T06:13:30.390Z"
+  },
+  {
+    "category": "student_creative",
+    "categoryLabel": "Student-Community Creative Distribution",
+    "plannedAmount": 300,
+    "actualSpend": 180,
+    "expenseLogs": [
+      {
+        "id": "exp_cre_01",
+        "date": "2026-10-25",
+        "amount": 180,
+        "description": "WhatsApp carousel micro-creative kit & student community banners",
+        "loggedBy": "admin"
+      }
+    ],
+    "notes": "WhatsApp micro-assets, Figma templates, student community graphics",
+    "isDemo": true,
+    "id": "bgt_mvt5ciq568e2bfaf5375",
+    "createdAt": "2026-10-29T06:12:43.853Z",
+    "updatedAt": "2026-10-29T06:13:30.393Z"
+  },
+  {
+    "category": "paid_experiment",
+    "categoryLabel": "Optional High-Intent Promotional Experiment",
+    "plannedAmount": 800,
+    "actualSpend": 420,
+    "expenseLogs": [
+      {
+        "id": "exp_paid_01",
+        "date": "2026-10-27",
+        "amount": 420,
+        "description": "High-intent search experiment for final-year AI project seekers (22 registrations acquired)",
+        "loggedBy": "admin"
+      }
+    ],
+    "notes": "High-intent search or targeted engineering community experiment",
+    "isDemo": true,
+    "id": "bgt_mvt5ciqjecf7bc5ef69d",
+    "createdAt": "2026-10-29T06:12:43.867Z",
+    "updatedAt": "2026-10-29T06:13:30.396Z"
+  },
+  {
+    "category": "contingency",
+    "categoryLabel": "Contingency & Reserve",
+    "plannedAmount": 400,
+    "actualSpend": 0,
+    "expenseLogs": [],
+    "notes": "Buffer for mid-campaign optimization or unexpected outreach needs",
+    "isDemo": true,
+    "id": "bgt_mvt5ciqub0e54c497946",
+    "createdAt": "2026-10-29T06:12:43.878Z",
+    "updatedAt": "2026-10-29T06:13:30.399Z"
+  }
+]
